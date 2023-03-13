@@ -4,7 +4,7 @@ const Tech = () => {
   return (
     <div>
 
-      <h1 className='text-center text-3xl font-bold'>Technologies I use</h1>
+      <h1 className='text-center text-3xl font-bold md:p-4'>Technologies I use</h1>
 
       <div className='p-10 grid grid-cols-6 gap-16 justify-items-center md:grid-cols-2 ms:grid-cols-1 '>
         <FaReact size={150} className='hover:scale-125 hover:text-rose-400 duration-200' />
