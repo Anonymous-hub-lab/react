@@ -8,12 +8,12 @@ const Tech = () => {
 
       <div className='p-10 grid grid-cols-6 gap-16 justify-items-center md:grid-cols-2 ms:grid-cols-1 '>
         <FaReact size={150} className='hover:scale-125 hover:text-rose-400 duration-200' />
-        <FaPython size={150} className='hover:text-blue-500' />
-        <FaPhp size={150} className='hover:text-green-400' />
+        <FaPython size={150} className='hover:text-blue-500 hover:scale-125' />
+        <FaPhp size={150} className='hover:text-green-400 hover:scale-125' />
         <FaJava size={150} className='animate-pulse hover:text-yellow-400 duration-75
-        ' />
-        <FaCss3 size={150} className='hover:text-red-600' />
-        <FaSwift size={150} className='hover:text-orange-500' />
+        hover:scale-125' />
+        <FaCss3 size={150} className='hover:text-red-600  hover:scale-125' />
+        <FaSwift size={150} className='hover:text-orange-500  hover:scale-125' />
       </div>
 
     </div>

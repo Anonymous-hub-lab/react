@@ -18,9 +18,9 @@ const Info = () => {
       <div className='relative'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000" fill-opacity="1" d="M0,160L1440,128L1440,320L0,320Z"></path>
         </svg>
-        <div className='absolute bottom-0 text-white ml-[50%] mb-[1%] text-2xl'>
+        <div className='absolute bottom-0 text-white ml-[45%] mb-[3%] text-2xl'>
           <h1>Developed By</h1>
-          <p>Soemone</p>
+          <p>Someone</p>
         </div>
       </div>
 
