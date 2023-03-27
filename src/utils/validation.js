@@ -1,5 +1,5 @@
 export const isVal = (formik, index) => {
-  console.log(index);
+
   switch (index) {
     case 1:
       if (formik.errors.email && formik.touched.email) {
