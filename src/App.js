@@ -1,30 +1,28 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
-import Add from './component/Add'
 import Header from './component/Header'
-import Update from './component/Update'
 import Home from './pages/Home'
+import Search from './pages/Search'
+import MovieByCategory from './pages/MovieByCategory'
+import Detail from './component/Detail'
+import PageQuery from './pages/PageQuery'
 
 
 const App = () => {
 
-  // let data = [{ id: 1, title: 'hello' }, { id: 2, title: 'lio' }];
 
-  // data = data.map((d) => {
-  //   return d.id == 1 ? { id: 1, title: 'see you' } : d
-  // });
 
-  // console.log(data);
   return (
     <div>
 
       <Header />
+
       <Routes>
-
         <Route path='/' element={<Home />} />
-        <Route path='contact' element={<Add />} />
-        <Route path='update' element={<Update />} />
-
+        <Route path='movie/:category' element={<MovieByCategory />} />
+        <Route path='movie/page/:id' element={<PageQuery />} />
+        <Route path='movie/search/:search' element={<Search />} />
+        <Route path='movie/detail/:id' element={<Detail />} />
       </Routes>
 
 

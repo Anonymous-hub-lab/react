@@ -1,10 +1,15 @@
 import React from 'react'
+import { useGetTrendingMovieQuery } from '../features/movieApi'
+import DataShow from '../component/DataShow';
 
 const Home = () => {
+
+  const { isLoading, isError, error, data } = useGetTrendingMovieQuery();
+
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <>
+      <DataShow data={data} isLoading={isLoading} />
+    </>
   )
 }
 
