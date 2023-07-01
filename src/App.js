@@ -1,30 +1,24 @@
-import React from 'react'
-import { Route, Routes } from 'react-router'
-import Header from './component/Header'
-import Home from './pages/Home'
-import Search from './pages/Search'
-import MovieByCategory from './pages/MovieByCategory'
-import Detail from './component/Detail'
-import PageQuery from './pages/PageQuery'
-
+import { Route, Routes } from "react-router"
+import RootLayOut from "./components/RootLayout"
+import HomePage from "./pages/HomePage"
+import Header from "./components/Header"
 
 const App = () => {
 
 
 
+
+
+
   return (
     <div>
-
-      <Header />
-
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='movie/:category' element={<MovieByCategory />} />
-        <Route path='movie/page/:id' element={<PageQuery />} />
-        <Route path='movie/search/:search' element={<Search />} />
-        <Route path='movie/detail/:id' element={<Detail />} />
-      </Routes>
+        <Route element={<Header />} />
+        <Route path="/" element={<RootLayOut />} />
+        <Route index element={<HomePage />} />
 
+
+      </Routes>
 
     </div>
   )

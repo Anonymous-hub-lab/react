@@ -1,73 +1,43 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
-const apiKey = '92c1e33f015755d27a231793c44ecfed';
+const token = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmM2FkMmVlYTc1OTllYWRlNTQ1NzcyZGRiMjg2ZDM1MCIsInN1YiI6IjY0OWE0Nzk4MGU1YWJhMDBhY2YxZTAyZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nF_0iS6h7-QaX2slD6Pswre6F7N4pPgKfRPGPROqGac';
+
 
 export const movieApi = createApi({
   reducerPath: 'movieApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3/' }),
-
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3' }),
   endpoints: (builder) => ({
 
 
-    getTrendingMovie: builder.query({
-      query: (q) => ({
-        url: '/trending/all/day',
-        params: {
-          api_key: apiKey
+
+    nowPlaying: builder.query({
+      query: () => ({
+        url: '/movie/now_playing',
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: token
         }
-      }),
+      })
+
     }),
 
 
-    getMovieByCategory: builder.query({
-      query: (q) => ({
-        url: `/movie/${q}`,
-        params: {
-          api_key: apiKey
+
+    movieBycategory: builder.query({
+      query: () => ({
+        url: '/moviepopular',
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: token
         }
-      }),
-    }),
-
-
-    getMovieByPage: builder.query({
-      query: (q) => ({
-        url: `/movie/${q.category}`,
-        params: {
-          api_key: apiKey,
-          page: q.page
-        }
-      }),
-    }),
-
-
-
-    getSearchMovie: builder.query({
-      query: (searchText) => ({
-        url: '/search/movie',
-        params: {
-          api_key: apiKey,
-          query: searchText
-        },
-      }),
-    }),
-
-    getVideoMovie: builder.query({
-      query: (movieId) => ({
-        url: `/movie/${movieId}/videos`,
-        params: {
-          api_key: apiKey,
-        },
-      }),
+      })
     })
 
-
-
-
-
-
   })
+
 });
 
-
-export const { useGetMovieByCategoryQuery, useGetSearchMovieQuery, useGetTrendingMovieQuery, useGetVideoMovieQuery, useGetMovieByPageQuery } = movieApi;
+export const { useMovieBycategoryQuery, useNowPlayingQuery } = movieApi;
